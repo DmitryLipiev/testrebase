@@ -1,5 +1,3 @@
-package org.servemn.mcdms.domain.entity.user;
-
 import static org.hibernate.envers.RelationTargetAuditMode.NOT_AUDITED;
 
 import java.io.Serializable;
@@ -25,11 +23,6 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
-
-import org.servemn.mcdms.domain.entity.Person;
-import org.servemn.mcdms.domain.entity.user.security.SecurityAnswer;
-import org.servemn.mcdms.domain.enums.UserRole;
-import org.servemn.mcdms.domain.enums.UserStatus;
 
 /**
  * A user.
