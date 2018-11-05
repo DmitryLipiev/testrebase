@@ -43,7 +43,49 @@ public class User implements Serializable {
     @JoinColumn(name = "user_id", nullable = false)
     private Person person;
 
-    
+    @Column(name = "user_role", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+
+    @Column(name = "attempts", nullable = false)
+    private Long attempts = 0L;
+
+    @ToString.Exclude
+    @Column(name = "pwd",)
+    @NotAudited
+    private byte[] password;
+
+    @Column(name = "pwd_expired")
+    @NotAudited
+    private LocalDate passwordExpirationDate;
+
+    @Column(name = "email", unique = true, nullable = false)
+    private String email;
+
+    @Column(name = "alt_email")
+    private String alternativeEmail;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "user")
+    @NotAudited
+    private Set<SecurityAnswer> securityAnswers;
+
+    @Column(name = "user_status")
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
+
+    @Column(name = "last_login_datetime")
+    @NotAudited
+    private LocalDateTime lastLoginDateTime;
+
+    @Column(name = "last_reg_email")
+    @NotAudited
+    private LocalDateTime lastRegistrationEmail;
+
+    @Column(name = "real_user")
+    @NotAudited
+    private Boolean realUser;
+
     @Transient
     public boolean isHistoric() {
         return this.getStatus() == UserStatus.HISTORIC;

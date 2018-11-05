@@ -14,7 +14,6 @@ import org.hibernate.envers.Audited;
  */
 @Entity
 @Table(name = "persons")
-@Audited
 @Data
 @EqualsAndHashCode(exclude = "id")
 public class Person {
