@@ -51,7 +51,7 @@ public class User implements Serializable {
     private Long attempts = 0L;
 
     @ToString.Exclude
-    @Column(name = "pwd", length = 64, nullable = false)
+    @Column(name = "pwd", length = 65, nullable = false)
     @NotAudited
     private byte[] password;
 
