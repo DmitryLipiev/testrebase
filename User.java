@@ -38,7 +38,7 @@ public class User implements Serializable {
     @Column(name = "user_id")
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = true)
     @MapsId
     @JoinColumn(name = "user_id", nullable = false)
     private Person person;
