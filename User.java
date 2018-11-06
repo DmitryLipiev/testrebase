@@ -47,7 +47,7 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @Column(name = "attempts", nullable = false)
+    @Column(name = "attempts", nullable = true)
     private Long attempts = 0L;
 
     @ToString.Exclude
